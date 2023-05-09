@@ -1,3 +1,4 @@
+-- PROJECT ONE
 CREATE TABLE animals (
     id int GENERATED ALWAYS AS IDENTITY,
     name varchar(100),
@@ -7,3 +8,7 @@ CREATE TABLE animals (
     weight_kg decimal,
     primary key(id)
 );
+
+
+-- PROJECT TWO
+ALTER TABLE animals ADD COLUMN species varchar(100);
