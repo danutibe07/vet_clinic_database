@@ -31,3 +31,9 @@ SET species = 'unspecified';
 -- Check the updated values
 SELECT * FROM animal;
 ROLLBACK; -- Rollback the transaction
+
+--2
+-- setting the species column to digimon for all animals that have a name ending in mon
+UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
+--setting the species column to pokemon for all animals that don't have species already set.
+UPDATE animals SET species = 'pokemon' WHERE name NOT LIKE '%mon';
