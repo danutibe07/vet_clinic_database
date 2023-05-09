@@ -102,7 +102,7 @@ That's it! Congratulations, you have created your database and connected to it. 
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Derbal Mohammed El Amine**
+👤 **AKPAN DANIEL**
 
 - GitHub: [@githubhandle](https://github.com/danutibe07)
 - Twitter: [@twitterhandle](https://twitter.com/Danielutibe07?t=2kvKPTZQ7IGCw2FugE9xCQ&s=09)
