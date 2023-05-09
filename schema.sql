@@ -1,6 +1,6 @@
 CREATE TABLE animals (
     id int GENERATED ALWAYS AS IDENTITY,
-    name string(100),
+    name varchar(100),
     date_of_birth date,
     escape_attempts int,
     neutered boolean,
