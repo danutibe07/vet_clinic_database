@@ -40,11 +40,44 @@ UPDATE animals SET species = 'pokemon' WHERE name NOT LIKE '%mon';
 
 --3
 --Deleting the entire table then rolling back the action 
-BEGIN; -- Start the transaction
+BEGIN WORK; 
+DELETE FROM animals;
+SELECT * from animals;
+ROLLBACK WORK;
 
--- Delete the "animals" table
-DROP TABLE IF EXISTS animals;
+--4
+-- begin transaction
+BEGIN ; 
+-- Delete all animals born after Jan 1st, 2022
+DELETE FROM animals WHERE date_of_birth > '2022,01,01'::date;
+-- Create a savepoint for the transaction
+SAVEPOINT FirstSave; 
+-- Update all animals' weight to be their weight multiplied by -1
+update animals SET weight_kg = weight_kg * -1;
+-- Rollback to the savepoint
+ROLLBACK TO FirstSave;
+-- Update all animals' weights that are negative to be their weight multiplied by -1
+update animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+-- Commit transaction;
+COMMIT WORK;
 
--- Rollback the transaction
-ROLLBACK;
-
+--/queries/
+-- How many animals are there?
+SELECT COUNT(*) FROM animals; 
+-- How many animals have never tried to escape?
+SELECT COUNT(*) FROM animals WHERE escape_attempts = 0;
+-- What is the average weight of animals?
+SELECT AVG(weight_kg) FROM animals;
+-- Who escapes the most, neutered or not neutered animals?
+SELECT neutered, SUM(escape_attempts) AS total_escape_attempts
+FROM animals
+GROUP BY neutered;
+-- What is the minimum and maximum weight of each type of animal?
+SELECT species, MIN(weight_kg) AS min_weight, Max(weight_kg) AS max_weight 
+FROM animals
+GROUP By species; 
+-- What is the average number of escape attempts per animal type of those born between 1990 and 2000?
+SELECT species, AVG(escape_attempts) AS total_escape_attempts
+FROM animals
+WHERE date_of_birth BETWEEN '1990,01,01'::date AND '2000,12,31'
+GROUP By species; 
