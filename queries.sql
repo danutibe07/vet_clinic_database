@@ -37,3 +37,14 @@ ROLLBACK; -- Rollback the transaction
 UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
 --setting the species column to pokemon for all animals that don't have species already set.
 UPDATE animals SET species = 'pokemon' WHERE name NOT LIKE '%mon';
+
+--3
+--Deleting the entire table then rolling back the action 
+BEGIN; -- Start the transaction
+
+-- Delete the "animals" table
+DROP TABLE IF EXISTS animals;
+
+-- Rollback the transaction
+ROLLBACK;
+
