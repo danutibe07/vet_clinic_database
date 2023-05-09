@@ -1,3 +1,4 @@
+--PROJECT ONE
 -- Find all animals whose name ends in "mon"
 SELECT * from animals WHERE name LIKE '%mon';
 
@@ -21,3 +22,12 @@ SELECT * from animals WHERE name NOT IN ('Gabumon');
 
 -- Find all animals with a weight between 10.4kg and 17.3kg (including the animals with the weights that equals precisely 10.4kg or 17.3kg)
 SELECT * from animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
+
+--PROJECT TWO
+BEGIN; -- Start the transaction
+-- Update the column
+UPDATE animal
+SET species = 'unspecified';
+-- Check the updated values
+SELECT * FROM animal;
+ROLLBACK; -- Rollback the transaction
