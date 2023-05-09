@@ -12,5 +12,3 @@ INSERT INTO animals (name,date_of_birth,neutered,weight_kg,escape_attempts) VALU
 INSERT INTO animals (name,date_of_birth,neutered,weight_kg,escape_attempts) VALUES ('Boarmon','2018-06-07',true,20.4,7);
 INSERT INTO animals (name,date_of_birth,neutered,weight_kg,escape_attempts) VALUES ('Blossom','1998-10-13',false,17,3);
 INSERT INTO animals (name,date_of_birth,neutered,weight_kg,escape_attempts) VALUES ('Blossom','2022-05-14',true,22,4);
-
-
