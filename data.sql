@@ -6,7 +6,7 @@ INSERT INTO animals (name,date_of_birth,neutered,weight_kg,escape_attempts) VALU
 
 --PROJECT TWO
 INSERT INTO animals (name,date_of_birth,neutered,weight_kg,escape_attempts) VALUES ('Charmander','2020-02-08',false,-11,0);
-INSERT INTO animals (name,date_of_birth,neutered,weight_kg,escape_attempts) VALUES ('Plantmon',);
+INSERT INTO animals (name,date_of_birth,neutered,weight_kg,escape_attempts) VALUES ('Plantmon','2021-11-15',true,-5.7,2);
 INSERT INTO animals (name,date_of_birth,neutered,weight_kg,escape_attempts) VALUES ('Squirtle','1993-04-02',false,-12.13,3);
 INSERT INTO animals (name,date_of_birth,neutered,weight_kg,escape_attempts) VALUES ('Angemon','2005-06-12',true,-45,1);
 INSERT INTO animals (name,date_of_birth,neutered,weight_kg,escape_attempts) VALUES ('Boarmon','2018-06-07',true,20.4,7);
@@ -21,8 +21,8 @@ INSERT INTO owners (fullname,age) VALUES ('Melody Pond', 77);
 INSERT INTO owners (fullname,age) VALUES ('Dean Winchester', 14);
 INSERT INTO owners (fullname,age) VALUES ('Jodie Whittaker', 38);
 
-INSERT INTO species (name,age) VALUES ('Pokemon');
-INSERT INTO species (name,age) VALUES ('Digimon');
+INSERT INTO species (name) VALUES ('Pokemon');
+INSERT INTO species (name) VALUES ('Digimon');
 
 update animals SET species_id = 1 WHERE name NOT LIKE '%mon'; 
 update animals SET species_id = 2 WHERE name LIKE '%mon';
