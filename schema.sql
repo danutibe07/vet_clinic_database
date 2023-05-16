@@ -44,4 +44,29 @@ ADD COLUMN owner_id INT,
 ADD CONSTRAINT fk_animals_owners
 FOREIGN KEY (owner_id) REFERENCES owners(id);
 
+--PROJECT FOUR
+--CREATING THE VETS TABLE
+CREATE TABLE vets (
+    id int GENERATED ALWAYS AS IDENTITY,
+    name varchar(100),
+    age int,
+    date_of_graduation date,
+    primary key(id)
+);
 
+-- Create table specializations
+CREATE TABLE specializations (
+  id int GENERATED ALWAYS AS IDENTITY,
+  species_id int REFERENCES species(id),
+  vets_id int REFERENCES vets(id),
+  primary key(id)
+);
+
+-- Create table visits
+CREATE TABLE visits (
+  id int GENERATED ALWAYS AS IDENTITY,
+  animals_id int REFERENCES animals(id),
+  vets_id int REFERENCES vets(id),
+  visit_date date,
+  primary key(id)
+);
